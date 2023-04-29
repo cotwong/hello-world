@@ -1,30 +1,32 @@
 # imports
 from flask import Flask, request, make_response
 from flask_sqlalchemy import SQLAlchemy
- 
+from sqlalchemy.sql import text
+
+
 # initializing Flask app
 app = Flask(__name__)
- 
+
 # Google Cloud SQL (change this accordingly)
 PASSWORD ="catch143"
 PUBLIC_IP_ADDRESS ="34.27.237.11"
 DBNAME ="Yufi"
 PROJECT_ID ="yufeih11@gmail.com"
 INSTANCE_NAME ="cloudwerx-assessment:us-central1:catch"
- 
+
 # configuration
-app.config["SECRET_KEY"] = "yoursecretkey"
-app.config["SQLALCHEMY_DATABASE_URI"]= f"mysql + mysqldb://root:{707312498fyhFYH}@{34.27.237.11}/{Yufi}?unix_socket =/cloudsql/{yufeih11@gmail.com}:{cloudwerx-assessment:us-central1:catch}"
+# app.config["SECRET_KEY"] = "yoursecretkey"
+app.config["SQLALCHEMY_DATABASE_URI"]= "mysql+pymysql://root:707312498fyhFYH@34.27.237.11/Yufi?unix_socket =/cloudsql/yufeih11@gmail.com:cloudwerx-assessment:us-central1:catch"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= True
- 
-db = SQLAlchemy(hello-world)
- 
+
+db = SQLAlchemy(app)
+
 # User ORM for SQLAlchemy
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key = True, nullable = False)
     name = db.Column(db.String(50), nullable = False)
     email = db.Column(db.String(50), nullable = False, unique = True)
- 
+
 @app.route('/add', methods =['POST'])
 def add():
     # getting name and email
@@ -58,7 +60,7 @@ def add():
             }
  
             return make_response(responseObject, 400)
-         
+        
     else:
         # if user already exists then send status as fail
         responseObject = {
@@ -67,7 +69,7 @@ def add():
         }
  
         return make_response(responseObject, 403)
- 
+
 @app.route('/view')
 def view():
     # fetches all the users
@@ -85,8 +87,15 @@ def view():
         'status' : 'success',
         'message': response
     }, 200)
- 
- 
+
+@app.route('/')
+def testdb():
+    try:
+        db.session.query("1").from_statement(text("SELECT 1")).all()
+        return '<h1>It works.</h1>'
+    except:
+        return '<h1>Something is broken.</h1>'
+
 if __name__ == "__main__":
     # serving the app directly
     app.run()

@@ -1,0 +1,16 @@
+steps:
+- name: python
+  entrypoint: pip
+  args: ["install", "-r", "requirements.txt"]
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'hello-world-app', '--image', 'gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA', '--region', 'us-central1']
+images:
+- gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA
