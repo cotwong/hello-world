@@ -1,10 +1,8 @@
-# imports
 from flask import Flask, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import text
 
 
-# initializing Flask app
 app = Flask(__name__)
 
 # Google Cloud SQL (change this accordingly)
@@ -29,11 +27,9 @@ class Users(db.Model):
 
 @app.route('/add', methods =['POST'])
 def add():
-    # getting name and email
     name = request.form.get('Yufi')
     email = request.form.get('yufeih11@gmail.com')
  
-    # checking if user already exists
     user = Users.query.filter_by(email = email).first()
  
     if not user:
@@ -97,5 +93,4 @@ def testdb():
         return '<h1>Something is broken.</h1>'
 
 if __name__ == "__main__":
-    # serving the app directly
     app.run()
