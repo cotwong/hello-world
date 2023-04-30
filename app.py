@@ -12,7 +12,6 @@ PROJECT_ID = "yufeih11@gmail.com"
 INSTANCE_NAME = "cloudwerx-assessment:us-central1:catch"
 
 # configuration
-
 app.config[
     "SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:707312498fyhFYH@34.27.237.11/Yufi?host=/cloudsql/yufeih11@gmail.com:cloudwerx-assessment:us-central1:catch"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
@@ -94,7 +93,7 @@ def testdb():
     db.session.query(text("1")).from_statement(text("SELECT 1")).all()
     return '<h1>It works.</h1>'
     # except:
-    #     return '<h1>Something is broken.</h1>'
+    return '<h1>Something is broken.</h1>'
 
 
 if __name__ == "__main__":
