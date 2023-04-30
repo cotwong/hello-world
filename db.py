@@ -2,7 +2,7 @@ import os
 import pymysql
 from flask import jsonify
 
-db_user = os.environ.get('cotwong')
+db_user = os.environ.get('root')
 db_password = os.environ.get('qwe123')
 db_name = os.environ.get('mydatabase')
 db_connection_name = os.environ.get('cloudwerx-assessment:us-central1:user-db')
