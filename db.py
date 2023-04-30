@@ -14,7 +14,6 @@ def get():
         password=db_password,
         unix_socket=unix_socket,
         db=db_name,
-        cursorclass=pymysql.cursors.DictCursor
     )
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM users')
