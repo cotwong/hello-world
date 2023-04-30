@@ -1,7 +1,7 @@
 import os
 import pymysql
 
-db_user = os.environ.get('cotwong')
+db_user = os.environ.get('root')
 db_password = os.environ.get('qwe123')
 db_name = os.environ.get('mydatabase')
 db_connection_name = os.environ.get('cloudwerx-assessment:us-central1:user-db')
@@ -17,7 +17,7 @@ def get():
         cursorclass=pymysql.cursors.DictCursor
     )
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM mytable')
+    cursor.execute('SELECT * FROM users')
     results = cursor.fetchall()
     conn.close()
     return str(results)
