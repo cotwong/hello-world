@@ -14,7 +14,7 @@ INSTANCE_NAME = "cloudwerx-assessment:us-central1:catch"
 # configuration
 
 app.config[
-    "SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:707312498fyhFYH@34.27.237.11/Yufi?unix_socket =/cloudsql/yufeih11@gmail.com:cloudwerx-assessment:us-central1:catch"
+    "SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:707312498fyhFYH@34.27.237.11/Yufi?host=/cloudsql/yufeih11@gmail.com:cloudwerx-assessment:us-central1:catch"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 
 db = SQLAlchemy(app)
@@ -90,11 +90,11 @@ def view():
 
 @app.route('/')
 def testdb():
-    try:
-        db.session.query("1").from_statement(text("SELECT 1")).all()
-        return '<h1>It works.</h1>'
-    except:
-        return '<h1>Something is broken.</h1>'
+    # try:
+    db.session.query(text("1")).from_statement(text("SELECT 1")).all()
+    return '<h1>It works.</h1>'
+    # except:
+    #     return '<h1>Something is broken.</h1>'
 
 
 if __name__ == "__main__":
