@@ -4,10 +4,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-db_user = os.environ.get('DB_USER')
-db_password = os.environ.get('DB_PASSWORD')
-db_name = os.environ.get('DB_NAME')
-db_host = os.environ.get('DB_HOST')
+db_user = os.environ.get('cotwong')
+db_password = os.environ.get('qwe123')
+db_name = os.environ.get('mydatabase')
+db_host = os.environ.get('cloudwerx-assessment:us-central1:user-db')
 
 @app.route('/')
 def hello_world():
