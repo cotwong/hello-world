@@ -1,6 +1,6 @@
 import os
 import pymysql
-from flask import jsonify
+from flask import Flask, jsonify
 
 db_user = os.environ.get('root')
 db_password = os.environ.get('qwe123')
@@ -23,7 +23,7 @@ def open_connection():
     return conn
 
 
-def hello_world():
+def get():
     conn = open_connection()
     with conn.cursor() as cursor:
         cursor.execute('SELECT * FROM my_table')
