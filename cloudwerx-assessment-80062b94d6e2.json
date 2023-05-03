@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cloudwerx-assessment",
+  "private_key_id": "80062b94d6e2abd1225abefe8413ed40b03dd278",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1BbtP6Fbo/Ozk\nBFvCPbdpU2CNGvhrw+cyjYuV3wFQkbu99QAr/PwJ7DzshVTWLNUp8W0u7vtmFEm1\nkRsGW+E+QR/SctLTSsKebDhxEOd9XS3Hq3lZoSZOLmjdBWEvKPIAimm2HRqA1HoZ\nOyCEfgqvI3f0GapnIMKTBTiXwv05FnACRe1MrdkXzDcuNe2I7wLCmTmI8//I+arb\noZoONalvz6QJ302DesXWD0+oZJGIwkT0wuA/SiUptUp704DYwQLkxcllx6WVoYNb\nJUTrT8YC2YorxX8W4HYdLAz0vxmMntT3hYEaJKEaPYwMMYkJMYwISISJT+O3y+yl\nRdQEGOGfAgMBAAECggEADycxrNi4Hby+X7/1pmbgKZLvLCCr1umJOvQaUStfwszQ\nOHB/2S7OMk5yMyJeHaeXGHG7QAiFRuA/41EIQBoE2t88uLMf7sv9SqGof954Ykgg\nguxZtiUFPdoosQe4QOheiakMfFAnXc1rgx0t9alPX6XKbsaPOx7E6uWu/RU3eUXB\ngFId5n9SfSU+QJ7DfDgAyNqiHXDB7DL+KOIipe1WuIDScnWAze9XW7tKRIiF5ZQw\nTHQ7KLSdcH+bxQxvFY2tgJxuH75vy8DnedsFOOsggmmKGrixGm+uGXaCPdTl9jJN\nraV396fg8obnuBDT0MhqnbTtVc5RQQhqMIn2tT7DAQKBgQDdk6yiEFl+CcOj+OFm\nF3fJ8qU1OlhjQsbNoybtHz76d0QlnLHqU42T26RKsEjpcB6U4Hxg2OhoFVRZlUkK\nXGB5rWdWiJoAkQ5bTE6ijrFNIEg0f/JJc0KeXb1/FCaSlhp7SWDF6OaQ/MdKs3R1\nD9E8UJIMqkSOQjcbL+KMeJNIXwKBgQDRJSrIXEi8p5JDO3FE8pAYA5dL4vWcGzOY\nEeu32ZeNMX8hUXYICBGIcZF4hJ+yQ6jrf9u/eQ7bLDjMGTVvNPH8XsG3RAAHSKwE\njsTCGKjbvctEfJBNGvJ3eQinPy19NKlQcW0sETzqNG14jUHL8VbR57R1sMUCDdDF\nd86kcZnuwQKBgCGPKkhpfYRvaig9m7XgvA3kKE2FhrmR9ZZTraOgZeN9iN7Betjo\nyrqoO5vsUz638onN7kik0Z5iDKJ8z9E36IzFTK94hQqs7aW6Svan8gaiaw04i7PA\nN0jRHdBPdwAgp+YgWP3gpnszLeQMhgjs2l3uPhCZAUUilkIR4Jgx8uy1AoGBAJcd\njMkSbPfq+DKd65zOyrCfP510UtTFjsTtBe1kSi2ZuurfCjKJaem1bU+wPBc47f+i\n9atmlAZm8G8AM+yzS7l22e9KMd8RckEkyyQXX0LO4uUMP9OGifUrPcZiTsLt3vyh\nyCkUF3h+Ay8cmZL7QSkPiwOSgvaV9ugHRgbpkjjBAoGACPjL0qmegvN07gurZiev\nQ3+MW9BQ+pD4me7n4PJPeMTXzvzXgGyREZnm6aWlLVupI1/MCpTKG/3VptPULDH3\nZzUG1XoY/kaG0Yki0cAkOt01Glv193qmD32Zzqp5zvUCBn/EcDHG0GaFZ7R9wxys\n2JDv9icOISeH1br8ff3UNRM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "local-683@cloudwerx-assessment.iam.gserviceaccount.com",
+  "client_id": "100913151487857316623",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/local-683%40cloudwerx-assessment.iam.gserviceaccount.com"
+}

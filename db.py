@@ -20,4 +20,3 @@ def get():
     results = cursor.fetchall()
     conn.close()
     return str(results)
-

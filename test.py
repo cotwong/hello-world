@@ -1,22 +1,47 @@
+import os
 import pymysql
+from flask import Flask, jsonify
 
-# Replace the variables with your own information
-db_user = "root"
-db_password = "qwe123"
-db_name = "mydatabase"
-db_host = "cloudwerx-assessment:us-central1:user-db"
+app = Flask(__name__)
 
-# Establish a connection to the database
-conn = pymysql.connect(user=db_user, password=db_password, database=db_name, host=db_host)
+db_user = os.environ.get('root')
+db_password = os.environ.get('qwe123')
+db_name = os.environ.get('mydatabase')
+cloud_sql_connection_name = os.environ.get('cloudwerx-assessment:us-central1:user-db')
+db_socket_dir = '/cloudsql/{}'.format(cloud_sql_connection_name)
 
-# Execute a query
-with conn.cursor() as cursor:
-    sql = "SELECT * FROM users"
-    cursor.execute(sql)
+def create_connection():
+    try:
+        #conn = pymysql.connect(user=db_user, password=db_password,
+        #                       unix_socket = '{}/{}'.format(db_socket_dir, cloud_sql_connection_name), db=db_name)
+        #conn = pymysql.connect(user=db_user, password=db_password,
+        #                       unix_socket='/cloudsql/{}'.format(cloud_sql_connection_name), db=db_name)
+        conn = pymysql.connect(
+            user=db_user,
+            password=db_password,
+            unix_socket=db_socket_dir,
+            db=db_name,
+            cursorclass=pymysql.cursors.DictCursor,
+        )
+    except pymysql.MySQLError as e:
+        print(e)
+        return None
+    return conn
+
+
+@app.route('/')
+def index():
+    conn = create_connection()
+    if not conn:
+        return jsonify({'error': 'Failed to connect to database.'}), 500
+
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM users')
     results = cursor.fetchall()
+    conn.close()
 
-for row in results:
-    print(row)
+    return jsonify({'results': results})
 
-# Close the connection
-conn.close()
+
+if __name__ == '__main__':
+    app.run(debug=True)
