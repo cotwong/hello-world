@@ -13,8 +13,8 @@ cloud_sql_connection_name = 'cloudwerx-assessment:us-central1:demo'
 def get_db():
     return pymysql.connect(
         user=db_user,
-       # password=db_password,
-        host='127.0.0.1',
+        # host='127.0.0.1',
+        host='0.0.0.0',
         port=3306,
         database=db_name,
         cursorclass=pymysql.cursors.DictCursor
