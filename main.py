@@ -19,7 +19,7 @@ def get_db():
         host='104.197.221.103',
         # port=3306,
         database=db_name,
-        cursorclass=pymysql.cursors.DictCursor
+        # cursorclass=pymysql.cursors.DictCursor
     )
 
 
