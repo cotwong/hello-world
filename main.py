@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 # Cloud SQL database configuration
 db_user = 'yufeih11'
-#db_password = ''
 db_name = 'demo-db'
 cloud_sql_connection_name = 'cloudwerx-assessment:us-central1:demo'
 
