@@ -1,15 +1,14 @@
 import os
-
 from flask import Flask
+from db import get
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route('/', methods=['GET'])
 def hello_world():
-    name = os.environ.get("NAME", "World")
-    return "Hello {}!".format(name)
+    return get()
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 81)))
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 80)))
