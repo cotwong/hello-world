@@ -11,6 +11,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'hello-world-app', '--image', 'gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA', '--region', 'us-central1']
+  args: ['run', 'deploy', 'hello-world-app', '--image', 'gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA', '--region', 'us-central1','--platform=managed','--allow-unauthenticated']
 images:
 - gcr.io/cloudwerx-assessment/us-central1-docker.pkg.dev/cloudwerx-assessment/cloud-run-source-deploy/hello-world/hello-world-app:$COMMIT_SHA
