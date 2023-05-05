@@ -4,7 +4,8 @@ import pymysql
 app = Flask(__name__)
 
 # Cloud SQL database configuration
-db_user = 'yufeih11'
+db_user = 'localhost'
+db_password = 'qwe123'
 db_name = 'demo-db'
 cloud_sql_connection_name = 'cloudwerx-assessment:us-central1:demo'
 
@@ -13,9 +14,10 @@ cloud_sql_connection_name = 'cloudwerx-assessment:us-central1:demo'
 def get_db():
     return pymysql.connect(
         user=db_user,
-        #host='127.0.0.1',
-        host='0.0.0.0',
-        port=3306,
+        password=db_password,
+        # host='127.0.0.1',
+        host='104.197.221.103',
+        # port=3306,
         database=db_name,
         cursorclass=pymysql.cursors.DictCursor
     )
