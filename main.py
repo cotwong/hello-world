@@ -15,9 +15,7 @@ def get_db():
     return pymysql.connect(
         user=db_user,
         password=db_password,
-        # host='127.0.0.1',
         host='104.197.221.103',
-        # port=3306,
         database=db_name,
         # cursorclass=pymysql.cursors.DictCursor
     )
