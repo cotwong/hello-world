@@ -1,13 +1,12 @@
 import os
 from flask import Flask
-from db import get
 
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def hello_world():
-    return get()
+    return 'Hello world!'
 
 
 if __name__ == "__main__":
